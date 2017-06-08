@@ -19,4 +19,4 @@ Projects for Udacity: Intro To Programming Nano-Degree
 * All code created by Daniel Nguyen
  
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/ziggysauce/udacity_IPND/blob/master/LICENSE) file for details
