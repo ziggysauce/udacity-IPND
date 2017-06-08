@@ -1,0 +1,134 @@
+@font-face {
+  font-family: noodleoblique;
+  src: url("fontsused/noodleoblique.ttf");
+}
+
+#body {
+  background-image: url("images/back4.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.headings {
+  font-family: noodleoblique;
+  padding: 20px;
+  font-size: 100px;
+  color: white;
+  display: inline;
+  text-shadow: 2px 2px #000000;
+  letter-spacing: 4px;
+}
+
+.bios {
+  font-family: noodleoblique;
+  padding: 20px;
+  font-size: 30px;
+  color: black;
+  display: inline;
+}
+
+li {
+  list-style-type: none;
+}
+
+.heroimages {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.story {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  padding: 5px 20px 5px 20px;
+  background: rgba(125,125,125,0.5);
+  color: white;
+}
+
+#overview {
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  margin: 10px 0px;
+  padding: 5px 20px 5px 20px;
+  background: rgba(125,125,125,0.5);
+  color: white;
+}
+
+.overhead {
+  background-color: #D55858;
+  color: white;
+  width: 30%;
+  padding: 10px;
+  text-align: center;
+  font-size: 50px;
+  font-family: noodleoblique;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #000000;
+}
+
+.abilities {
+  display: flex;
+  flex-wrap: wrap;
+justify-content: space-between;
+}
+
+.abilityimage {
+  width: auto;
+  text-align: center;
+  object-fit: contain;
+}
+
+.abilitybox {
+  margin: 5px;
+  padding: 5px;
+  background: rgba(125,125,125,0.5);
+  color: white;
+  text-align: center;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#media {
+  font-family: noodleoblique, sans-serif;
+  font-size: 50px;
+  color: white;
+  background-color: #FFAF00;
+  margin: 30px auto;
+  padding: 5px;
+  text-align: center;
+  width: 30%;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #000000;
+}
+
+.vid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5px auto;
+}
+
+.individ {
+  margin: auto;
+}
+
+#heroselect {
+  background: #0073CB;
+  color: white;
+  font-family: noodleoblique, sans-serif;
+  font-size: 50px;
+  width: 45%;
+  text-align: center;
+  padding: 2px;
+  margin: 30px auto;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  text-shadow: 2px 2px #000000;
+}
+
+#heroselect:hover {
+  background: #005596;
+}

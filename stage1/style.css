@@ -1,0 +1,149 @@
+@font-face {
+  font-family: noodleoblique;
+  src: url("fontsused/noodleoblique.ttf");
+}
+
+body {
+  background-color: #E9E9E7;
+}
+
+.header {
+  display: block;
+  flex-direction: column;
+  font-family: noodleoblique;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin: auto;
+  position: relative;
+  letter-spacing: 2px;
+}
+
+.inside {
+  position: relative;
+  margin-top: -5px;
+  margin-bottom: 10px;
+}
+
+#topback {
+  background: url("images/back5.jpg");
+  background-size: contain;
+  margin: auto;
+}
+
+#toppick {
+  width: 100%;
+  height: auto;
+  background-color: #E9E9E7;
+  color: black;
+  font-family: Arial, sans-serif;
+  font-size: 10px;
+  text-align: center;
+}
+
+#bliz {
+  width: 15%;
+  padding: 10px;
+  position: absolute;
+  display: block;
+  z-index: 01;
+}
+
+#group {
+  width: 100%;
+}
+
+#heroselect {
+  background: #0073CB;
+  color: white;
+  font-family: noodleoblique;
+  font-size: 60px;
+  width: 35%;
+  text-align: center;
+  padding: 2px;
+  margin: 30px auto;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px #000000;
+}
+
+.heropics {
+  height: 75px;
+  width: auto;
+}
+
+.heropics:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}
+
+li {
+  display: flex;
+  -webkit-flex: 0 0 auto; /* 0 shrink, 0 grow, auto basis */
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, serif;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 2px;
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 45%;
+  margin: 35px auto;
+}
+
+.class {
+  color: white;
+  text-align: center;
+  font-family: noodleoblique;
+  font-size: 45px;
+  background: #50D827;
+  width: 50%;
+  padding: 2px;
+  margin: 10px auto;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px #000000;
+}
+
+#all {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.classbox {
+  display: block;
+  width: auto;
+  position: relative;
+}
+
+.classinner {
+  display: table-cell;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+.link {
+  background: #FF4E4E;
+  color: white;
+  font-family: noodleoblique;
+  font-size: 60px;
+  width: 35%;
+  text-align: center;
+  padding: 2px;
+  margin: 30px auto;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-shadow: 2px 2px #000000;
+  display: flex;
+  justify-content: center;
+}
+
+.link:hover {
+  background: #9A0000;
+}
