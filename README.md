@@ -5,10 +5,10 @@ Projects for Udacity: Intro To Programming Nano-Degree
 <!-- Add links to each stage -->
 * [Stage 0](https://github.com/ziggysauce/udacity_IPND/tree/master/Stage%200): Learn To Code 
 * [Stage 1](https://github.com/ziggysauce/udacity_IPND/blob/master/Stage%201/README.md): Make A Stylish Website
-* Stage 3: Code Your Own Quiz
-* Stage 4: Create A Movie Website
-* Stage 5: Discover Your Path
-* Stage 6: Choose Your Path
+* Stage 2: Code Your Own Quiz
+* Stage 3: Create A Movie Website
+* Stage 4: Discover Your Path
+* Stage 5: Choose Your Path
  
 ## Built With
 * HTML5
