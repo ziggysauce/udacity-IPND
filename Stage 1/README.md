@@ -4,3 +4,9 @@ Build a stylish website using HTML and CSS.
 ## Buit With
 * HTML
 * CSS
+
+## Deployment
+* Open index.html 
+
+## Launch
+[Project 1](https://ziggysauce.github.io/udacity_IPND/Stage%201/index.html)
