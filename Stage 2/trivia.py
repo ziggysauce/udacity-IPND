@@ -90,11 +90,6 @@ def correct(section,cycle,points,tries,guess,trivia1,answers1):
     print "Correct"
     trivia1[section] = trivia1[section].replace(placeholder[cycle], guess)
     cycle = cycle + 1
-    if cycle == 5:
-        section = section + 1
-        if section == 4:
-            return win(points)
-        cycle = 0
     return pointscale(section,cycle,points,tries,guess,trivia1,answers1)
 
 #Incorrect Answer
@@ -121,6 +116,11 @@ def incorrect(section,cycle,points,tries,guess,trivia1,answers1):
 
 #Start Easy Difficulty
 def easy(section,cycle,points,tries,guess,trivia1,answers1):
+    if cycle == 5:
+        section = section + 1
+        if section == 4:
+            return win(points)
+        cycle = 0
     while section < len(trivia1):
         while cycle < len(placeholder):
             while tries < 5:
@@ -135,30 +135,14 @@ def easy(section,cycle,points,tries,guess,trivia1,answers1):
 #Start Medium Difficulty
 def medium(section,cycle,points,tries,guess,trivia1,answers1):
     trivia1, answers1 = trivia2, answers2
-    while section < len(trivia1):
-        while cycle < len(placeholder):
-            while tries < 5:
-                print trivia1[section]
-                print "Attempt: " + str(tries + 1)
-                guess = raw_input(blanks[cycle])
-                if guess.lower() == answers1[section][cycle].lower():
-                    return correct(section,cycle,points,tries,guess,trivia1,answers1)
-                else:
-                    return incorrect(section,cycle,points,tries,guess,trivia1,answers1)
+    return easy(section,cycle,points,tries,guess,trivia1,answers1)
+
 
 #Start Hard Difficulty
 def hard(section,cycle,points,tries,guess,trivia1,answers1):
     trivia1, answers1 = trivia3, answers3
-    while section < len(trivia1):
-        while cycle < len(placeholder):
-            while tries < 5:
-                print trivia1[section]
-                print "Attempt: " + str(tries + 1)
-                guess = raw_input(blanks[cycle])
-                if guess.lower() == answers1[section][cycle].lower():
-                    return correct(section,cycle,points,tries,guess,trivia1,answers1)
-                else:
-                    return incorrect(section,cycle,points,tries,guess,trivia1,answers1)
+    return easy(section,cycle,points,tries,guess,trivia1,answers1)
+
 
 #Start Game
 def start(diff):
