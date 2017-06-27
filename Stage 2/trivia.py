@@ -45,9 +45,11 @@ answers3 = {0:['stapes','dodo','inelastic','Australopithecus','cascade'],
 2:['Star','Kingpin','Asgard','Mjolnir','Sai'],
 3:['Idina','Tupac','Aaliyah','piano','Coachella']}
 
-#Completion of Game
-#Show point total and description based on points accumulated
 def win(points):
+    """
+    Completion of Game
+    Show point total and description based on points accumulated
+    """
     print "\nCongratulations " + username + "! You scored " + str(points) + " points."
     if points > 90:
         print "You're a trivia God!\n"
@@ -60,10 +62,12 @@ def win(points):
     else:
         print "Unfortunately however, that means you simply got through it.\n"
 
-#Points generator
-#Inputs points from question
-#Outputs total points
-def pointscale(section,cycle,points,tries,guess,trivia1,answers1):
+def pointscale(section,cycle,points,tries,guess,trivia,answers):
+    """
+    Points generator
+    Inputs points from question
+    Outputs total points
+    """
     if tries == 0:
         points = points + 5
         print "Total points: " + str(points)
@@ -80,83 +84,83 @@ def pointscale(section,cycle,points,tries,guess,trivia1,answers1):
         points = points + 1
         print "Total points: " + str(points)
     tries = 0
-    return easy(section,cycle,points,tries,guess,trivia1,answers1)
+    return begin(section,cycle,points,tries,guess,trivia,answers)
 
-#Correct Answer
-#Inputs guess
-#Outputs correct answer into trivia text
-def correct(section,cycle,points,tries,guess,trivia1,answers1):
+def correct(section,cycle,points,tries,guess,trivia,answers):
+    """
+    Correct Answer
+    Inputs guess
+    Outputs correct answer into trivia text
+    """
     newlist.append(guess)
     print "Correct"
-    trivia1[section] = trivia1[section].replace(placeholder[cycle], guess)
+    trivia[section] = trivia[section].replace(placeholder[cycle], guess)
     cycle = cycle + 1
-    return pointscale(section,cycle,points,tries,guess,trivia1,answers1)
+    return pointscale(section,cycle,points,tries,guess,trivia,answers)
 
-#Incorrect Answer
-#Inputs guess
-#Outputs correct answer after 5 tries
-def incorrect(section,cycle,points,tries,guess,trivia1,answers1):
+def incorrect(section,cycle,points,tries,guess,trivia,answers):
+    """
+    Incorrect Answer
+    Inputs guess
+    Outputs correct answer after 5 tries
+    """
     print "Sorry, '" + guess + "' was incorrect."
     tries = tries + 1
-    if tries == 5:
+    if tries == len(blanks):
         print "You've ran out of attempts!"
-        print "The correct answer was '" + answers1[section][cycle] + "'"
-        trivia1[section] = trivia1[section].replace(placeholder[cycle], answers1[section][cycle])
+        print "The correct answer was '" + answers[section][cycle] + "'"
+        trivia[section] = trivia[section].replace(placeholder[cycle], answers[section][cycle])
         cycle = cycle + 1
-        if cycle == 5:
+        if cycle == len(blanks):
             section = section + 1
-            if section == 4:
+            if section == len(trivia):
                 return win(points)
             cycle = 0
-            return pointscale(section,cycle,points,tries,guess,trivia1,answers1)
+            return pointscale(section,cycle,points,tries,guess,trivia,answers)
         else:
-            return pointscale(section,cycle,points,tries,guess,trivia1,answers1)
+            return pointscale(section,cycle,points,tries,guess,trivia,answers)
     else:
-        return easy(section,cycle,points,tries,guess,trivia1,answers1)
+        return begin(section,cycle,points,tries,guess,trivia,answers)
 
-#Start Easy Difficulty
-def easy(section,cycle,points,tries,guess,trivia1,answers1):
-    if cycle == 5:
+def begin(section,cycle,points,tries,guess,trivia,answers):
+    """
+    Start game with selected difficulty
+    """
+    if cycle == len(blanks):
         section = section + 1
-        if section == 4:
+        if section == len(trivia):
             return win(points)
         cycle = 0
-    while section < len(trivia1):
+    while section < len(trivia):
         while cycle < len(placeholder):
-            while tries < 5:
-                print trivia1[section]
+            while tries < len(blanks):
+                print trivia[section]
                 print "Attempt: " + str(tries + 1)
                 guess = raw_input(blanks[cycle])
-                if guess.lower() == answers1[section][cycle].lower():
-                    return correct(section,cycle,points,tries,guess,trivia1,answers1)
+                if guess.lower() == answers[section][cycle].lower():
+                    return correct(section,cycle,points,tries,guess,trivia,answers)
                 else:
-                    return incorrect(section,cycle,points,tries,guess,trivia1,answers1)
+                    return incorrect(section,cycle,points,tries,guess,trivia,answers)
 
-#Start Medium Difficulty
-def medium(section,cycle,points,tries,guess,trivia1,answers1):
-    trivia1, answers1 = trivia2, answers2
-    return easy(section,cycle,points,tries,guess,trivia1,answers1)
-
-
-#Start Hard Difficulty
-def hard(section,cycle,points,tries,guess,trivia1,answers1):
-    trivia1, answers1 = trivia3, answers3
-    return easy(section,cycle,points,tries,guess,trivia1,answers1)
-
-
-#Start Game
 def start(diff):
+    """
+    Select difficulty
+    """
     section, cycle, points, tries, guess = 0,0,0,0,0
     if diff == "novice":
-        return easy(section,cycle,points,tries,guess,trivia1,answers1)
-    if diff == "master":
-        return medium(section,cycle,points,tries,guess,trivia1,answers1)
-    if diff == "legend":
-        return hard(section,cycle,points,tries,guess,trivia1,answers1)
+        trivia, answers = trivia1, answers1
+        return begin(section,cycle,points,tries,guess,trivia,answers)
+    elif diff == "master":
+        trivia, answers = trivia2, answers2
+        return begin(section,cycle,points,tries,guess,trivia,answers)
+    elif diff == "legend":
+        trivia, answers = trivia3, answers3
+        return begin(section,cycle,points,tries,guess,trivia,answers)
 
-
-#Provide instructions for user
 def intro():
+    """
+    Provide instructions for user
+    """
     print "\nYou will have 5 attempts to guess the correct word(s) for each fill-in-the-blank.\nGetting the correct answer with fewer attempts rewards you with a higher point value per the following:\n1st Attempt = 5 points\n2nd Attempt = 4 points\n3rd Attempt = 3 points\n4th Attempt = 2 points\n5th Attempt = 1 point\nIncorrect   = 0 points\n"
     return start(diff)
 
