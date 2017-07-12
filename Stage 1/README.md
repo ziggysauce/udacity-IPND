@@ -1,7 +1,7 @@
 # Stage 1: Make A Stylish Website
 Build a stylish website using HTML and CSS.
 
-## Buit With
+## Built With
 * HTML
 * CSS
 
