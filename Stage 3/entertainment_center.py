@@ -2,6 +2,7 @@ import fresh_tomatoes
 import media
 
 # Movie Information
+# Store movie title, description, image link, trailer link, release date, and phase
 """ Phase One """
 
 ironman = media.Movie("Iron Man", "Billionaire industrialist Tony Stark builds himself a suit of armor after he is taken captive by a terrorist organization. Free from his captors, he decides to upgrade and don his armor as Iron Man in order to hunt down weapons that were sold under the table.", "https://upload.wikimedia.org/wikipedia/en/7/70/Ironmanposter.JPG", "https://youtu.be/8hYlB38asDY", "May 2, 2008", "Phase One: Avengers Assembled", "p1")
