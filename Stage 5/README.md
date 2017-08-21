@@ -1,4 +1,5 @@
-# Memory Game Project
+# Stage 5: Memory Game Project
+Build a memory game using HTML, CSS, and JavaScript
 
 ## Table of Contents
 
@@ -13,8 +14,13 @@ To get started, open `js/app.js` and start building out the app's functionality
 
 For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
 
-## Contributing
+## Built With
+* HTML
+* CSS
+* JavaScript
 
-This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
+## Deployment
+* Open index.html 
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+## Launch
+[Project 5](https://ziggysauce.github.io/udacity_IPND/Stage%205/index.html)
