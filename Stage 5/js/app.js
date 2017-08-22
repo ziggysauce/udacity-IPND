@@ -1,7 +1,6 @@
-/*
- * Create a list that holds all of your cards
- */
+/* JS File */
 
+var array = ['fb', 'gplus', 'ig', 'pinterest', 'tumblr', 'reddit', 'snap', 'twitter'];
 
 /*
  * Display the cards on the page
@@ -36,3 +35,12 @@ function shuffle(array) {
  *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
+
+
+
+function show() {
+  var cards = document.getElementById('1');
+  cards.onclick = function() {
+    cards.className = "card show open";
+  }
+}

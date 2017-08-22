@@ -17,7 +17,7 @@ body {
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background: #ffffff url('../img/photography.png'); /* Background pattern from Subtle Patterns */
     font-family: 'Coda', cursive;
 }
 
@@ -40,7 +40,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    background: linear-gradient(160deg, #FFDE7D 0%, #FF9972 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -54,7 +54,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #2e3d49;
+    background: #473636;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -65,19 +65,22 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+/*BG color*/
 .deck .card.open {
     transform: rotateY(0);
-    background: #02b3e4;
+    background: #FF7272;
     cursor: default;
 }
 
+/*Shows content*/
 .deck .card.show {
     font-size: 33px;
 }
 
+/*When two cars match*/
 .deck .card.match {
     cursor: default;
-    background: #02ccba;
+    background: #D24444;
     font-size: 33px;
 }
 
