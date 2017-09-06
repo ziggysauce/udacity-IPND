@@ -10,19 +10,19 @@ var array = ['fb', 'gplus', 'ig', 'pinterest', 'tumblr', 'reddit', 'snap', 'twit
  */
 
 // Shuffle function from http://stackoverflow.com/a/2450976
-function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-
-    while (currentIndex !== 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-    }
-
-    return array;
-}
+// function shuffle(array) {
+//     var currentIndex = array.length, temporaryValue, randomIndex;
+//
+//     while (currentIndex !== 0) {
+//         randomIndex = Math.floor(Math.random() * currentIndex);
+//         currentIndex -= 1;
+//         temporaryValue = array[currentIndex];
+//         array[currentIndex] = array[randomIndex];
+//         array[randomIndex] = temporaryValue;
+//     }
+//
+//     return array;
+// }
 
 
 /*
@@ -36,11 +36,18 @@ function shuffle(array) {
  *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
+window.onload = function() {
+  show();
+}
 
-
-function show() {
-  var cards = document.getElementById('1');
-  cards.onclick = function() {
-    cards.className = "card show open";
-  }
+/**
+ * Shows contents of card when clicked on
+ */
+function show(cardId) {
+  var currentCard = document.getElementById('card-one');
+    currentCard.onclick = function() {
+    this.classList.toggle('show');
+    this.classList.toggle('open');
+    console.log("I was clicked");
+  };
 }
