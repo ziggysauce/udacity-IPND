@@ -40,14 +40,20 @@ window.onload = function() {
   show();
 }
 
+var currentPair = [];
+
 /**
  * Shows contents of card when clicked on
+ * Temporarily stores clicked cards in array to find match
+ * If two cards match, they stay showing and change color
+ * If two cards do not match, they flip back and click resets
  */
-function show(cardId) {
+function show() {
   var currentCard = document.getElementById('card-one');
     currentCard.onclick = function() {
     this.classList.toggle('show');
     this.classList.toggle('open');
-    console.log("I was clicked");
+    currentPair.push(this.className);
+    console.log(currentPair);
   };
 }
