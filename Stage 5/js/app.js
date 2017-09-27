@@ -8,20 +8,6 @@
  *   - add each card's HTML to the page
  */
 
-// Shuffle function from http://stackoverflow.com/a/2450976
-// function shuffle(array) {
-//     var currentIndex = array.length, temporaryValue, randomIndex;
-//
-//     while (currentIndex !== 0) {
-//         randomIndex = Math.floor(Math.random() * currentIndex);
-//         currentIndex -= 1;
-//         temporaryValue = array[currentIndex];
-//         array[currentIndex] = array[randomIndex];
-//         array[randomIndex] = temporaryValue;
-//     }
-//
-//     return array;
-// }
 
 
 /*
@@ -36,11 +22,58 @@
  */
 
 window.onload = function() {
+  shuffle(array);
+  dealCards();
   flipCards();
 };
 
+var array = ['fa-facebook', 'fa-google-plus', 'fa-instagram', 'fa-pinterest', 'fa-tumblr', 'fa-reddit-alien', 'fa-snapchat-ghost', 'fa-twitter', 'fa-facebook', 'fa-google-plus', 'fa-instagram', 'fa-pinterest', 'fa-tumblr', 'fa-reddit-alien', 'fa-snapchat-ghost', 'fa-twitter'];
 var cardId = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16];
-var currentPair = []; var storeId = []; var clickNum = 0;
+var currentPair = []; var storeId = [];
+var clickNum = 0; var totalClick = 0;
+
+
+// Shuffles cards and stores values in array
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+};
+
+/**
+ * Creates an unordered list (deck)
+ * Creates list items within the unordered last (cards)
+ * Shows an arrangement of the cards face down
+ * Cards are randomized based on shuffle function
+ */
+function dealCards() {
+  let incnum = 1;
+  let getDeck = document.getElementById('cont');
+  let makeDeck = document.createElement('ul');
+  makeDeck.className = 'deck';
+  getDeck.appendChild(makeDeck);
+
+  array.map(function(j) {
+    let createCard = document.createElement('li');
+    createCard.className = 'card ';
+    createCard.setAttribute('id', 'card'+incnum);
+    let createIcon = document.createElement('i');
+    createIcon.className = 'fa ' + j;
+    incnum++;
+    createCard.appendChild(createIcon);
+    makeDeck.appendChild(createCard);
+  })
+};
+
+
 
 /**
  * Shows contents of card when clicked on
@@ -55,11 +88,9 @@ function flipCards() {
       this.classList.toggle('show');
       this.classList.toggle('open');
       clickNum++;
+      totalClick++;
       storeId.push(i);
-      currentPair.push(this.className);
-      // pairs();
-      console.log(currentPair);
-      console.log(storeId);
+      currentPair.push(this.children[0].className);
       if (clickNum == 2) {
         checkCards();
       }
@@ -75,30 +106,37 @@ function flipCards() {
 function checkCards() {
   // Cards match
   if (currentPair[0] == currentPair[1]) {
-      // Add match class to cards
-      document.getElementById('card' + storeId[0]).classList.add('match');
-      document.getElementById('card' + storeId[1]).classList.add('match');
-      console.log(this.className);
-      console.log("match");
+    // Add match class to cards
+    document.getElementById('card' + storeId[0]).classList.add('correct');
+    document.getElementById('card' + storeId[1]).classList.add('correct');
+    setTimeout(function() {
+        correct();
+        currentPair = [];
+        storeId = [];
+        clickNum = 0;
+    }, 500)
+  }
+  // Cards don't match. Reset array, flip cards back
+  else if (currentPair[0] !== currentPair[1]) {
+    document.getElementById('card' + storeId[0]).classList.add('incorrect');
+    document.getElementById('card' + storeId[1]).classList.add('incorrect');
+    setTimeout(function() {
+      incorrect();
       currentPair = [];
       storeId = [];
       clickNum = 0;
-    }
-  // Cards don't match. Reset array, flip cards back
-  else if (currentPair[0] !== currentPair[1]) {
-    document.getElementById('card' + storeId[0]).classList.remove('show', 'open');
-    document.getElementById('card' + storeId[1]).classList.remove('show', 'open');
-    currentPair = [];
-    storeId = [];
-    clickNum = 0;
-    console.log("no match");
+    }, 1000)
   };
 };
 
+// Correct cards stay visible
+function correct() {
+  document.getElementById('card' + storeId[0]).classList.add('match');
+  document.getElementById('card' + storeId[1]).classList.add('match');
+};
 
-// function pairs() {
-//   let getPairs = cardId.map(function(j) {
-//     let showMe = document.getElementById('card' + j);
-//     console.log(showMe.classList);
-//   })
-// }
+// Incorrect cards reset
+function incorrect() {
+  document.getElementById('card' + storeId[0]).classList.remove('show', 'open', 'incorrect');
+  document.getElementById('card' + storeId[1]).classList.remove('show', 'open', 'incorrect');
+};

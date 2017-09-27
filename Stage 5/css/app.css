@@ -40,7 +40,7 @@ h1 {
 .deck {
     width: 660px;
     min-height: 680px;
-    background: linear-gradient(160deg, #FFDE7D 0%, #FF9972 100%);
+    background: linear-gradient(160deg, #BEF1EB 0%, #4485D2 100%);
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
@@ -54,7 +54,7 @@ h1 {
 .deck .card {
     height: 125px;
     width: 125px;
-    background: #473636;
+    background: #403647;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -65,23 +65,51 @@ h1 {
     box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
 }
 
+
 /*BG color*/
 .deck .card.open {
-    transform: rotateY(0);
-    background: #FF7272;
-    cursor: default;
+  transform: rotateY(360deg);
+  transition: all ease-in-out 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  background: #FFBF6E;
+  cursor: default;
 }
 
 /*Shows content*/
 .deck .card.show {
-    font-size: 33px;
+  transition: all ease-in-out 500ms;
+  font-size: 33px;
+}
+
+/*Correct Match*/
+.deck .card.correct {
+  transition: all ease-in-out 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  background: #7ACB5C;
+  cursor: default;
+}
+
+/*Incorrect Match*/
+.deck .card.incorrect {
+  transition: all ease-in-out 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  background: #F15D5D;
+  cursor: default;
 }
 
 /*When two cars match*/
 .deck .card.match {
-    cursor: default;
-    background: #D24444;
-    font-size: 33px;
+  transition: all ease-in-out 500ms;
+  transition-delay: 500ms;
+  cursor: default;
+  background: #AF97DE;
+  font-size: 33px;
 }
 
 /*
