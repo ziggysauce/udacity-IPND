@@ -3,12 +3,12 @@ Projects for Udacity: Intro To Programming Nano-Degree
 
 ## Stages
 <!-- Add links to each stage -->
-* [Stage 0](https://github.com/ziggysauce/udacity_IPND/tree/master/Stage%200): Learn To Code 
-* [Stage 1](https://github.com/ziggysauce/udacity_IPND/blob/master/Stage%201): Make A Stylish Website
-* [Stage 2](https://github.com/ziggysauce/udacity_IPND/tree/master/Stage%202): Code Your Own Quiz
-* [Stage 3](https://github.com/ziggysauce/udacity_IPND/tree/master/Stage%203): Create A Movie Website
+* [Stage 0](https://github.com/ziggysauce/udacity_IPND/tree/master/stage0): Learn To Code 
+* [Stage 1](https://github.com/ziggysauce/udacity_IPND/blob/master/stage1): Make A Stylish Website
+* [Stage 2](https://github.com/ziggysauce/udacity_IPND/tree/master/stage2): Code Your Own Quiz
+* [Stage 3](https://github.com/ziggysauce/udacity_IPND/tree/master/stage3): Create A Movie Website
 * Stage 4: Discover Your Path
-* [Stage 5](https://github.com/ziggysauce/udacity_IPND/tree/master/Stage%205): Choose Your Path
+* [Stage 5](https://github.com/ziggysauce/udacity_IPND/tree/master/stage5): Choose Your Path
  
 ## Built With
 * HTML5
