@@ -1,0 +1,244 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/photography.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+}
+
+/*
+ * Styles for the deck of cards
+ */
+
+.notReady {
+  pointer-events: none;
+}
+
+.deck {
+    width: 660px;
+    min-height: 680px;
+    background: linear-gradient(160deg, #BEF1EB 0%, #4485D2 100%);
+    padding: 32px;
+    border-radius: 3px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+}
+
+.deck .card {
+    height: 125px;
+    width: 125px;
+    background: #403647;
+    font-size: 0;
+    color: #ffffff;
+    border-radius: 3px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card i {
+  pointer-events: none;
+}
+
+
+/*BG color*/
+.deck .card.open {
+  transform: rotateY(360deg);
+  transition: all ease-in-out 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  background: #FFBF6E;
+  cursor: default;
+}
+
+/*Shows content*/
+.deck .card.show {
+  transition: all ease-in-out 500ms;
+  font-size: 33px;
+}
+
+/*Correct Match*/
+.deck .card.correct {
+  animation: bounce 0.5s;
+  transition: all ease-in-out 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  background: #7ACB5C;
+  cursor: default;
+}
+
+@keyframes bounce {
+  0% { transform: translate(0px, 15px); }
+  20% { transform: translate(0px, -15px); }
+  40% { transform: translate(0px, 10px); }
+  60% { transform: translate(0px, -10px); }
+  80% { transform: translate(0px, 3px); }
+  90% { transform: translate(0px, -3px); }
+  100% { transform: translate(0px, 0px); }
+}
+
+/*Incorrect Match*/
+.deck .card.incorrect {
+  animation: shake 0.5s;
+  transition: all ease-in-out 500ms;
+  transition-duration: 500ms;
+  -webkit-transition-duration: 500ms;
+  -moz-transition-duration: 500ms;
+  background: #F15D5D;
+  cursor: default;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/*When two cars match*/
+.deck .card.match {
+  transition: all ease-in-out 500ms;
+  transition-delay: 500ms;
+  cursor: default;
+  background: #AF97DE;
+  font-size: 33px;
+  pointer-events: none;
+}
+
+/*
+ * Styles for the Score Panel
+ */
+
+.score-panel {
+  text-align: left;
+  width: 345px;
+  margin-bottom: 10px;
+}
+
+.timer {
+  display: inline-block;
+  margin-left: 15%;
+}
+
+.score-panel .stars {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    margin: 0 5px 0 0;
+}
+
+.score-panel .stars li {
+    list-style: none;
+    display: inline-block;
+}
+
+.score-panel .restart {
+    float: right;
+    cursor: pointer;
+}
+
+/*
+ * Styles for the end of game
+ */
+
+.game-over {
+  border-radius: 3px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+  padding: 0px 20px;
+  position: absolute;
+  display: block;
+  background: rgba(0,0,0,0.85);
+  color: #FFF;
+  font-size: 2em;
+}
+
+.game-over p {
+  height: 10vh;
+  margin: 0;
+}
+
+.game-over h2 {
+  height: 10vh;
+  margin: 20px 0px;
+}
+
+.game-over button {
+  cursor: pointer;
+  border: 2px solid #FFF;
+  border-radius: 3px;
+  padding: 10px;
+  margin-bottom: 20px;
+  outline: none;
+  background: transparent;
+  color: #FFF;
+  font-size: .5em;
+  transition: 0.5s;
+}
+
+.game-over button:hover {
+  background: #FFF;
+  color: #000;
+  border-radius: 25px;
+  transition: 0.5s;
+}
+
+#endscore {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 10vh;
+  margin: 0;
+}
+
+#endstars {
+  display: inline;
+}
+
+#endstars li {
+  display: inline-block;
+  list-style: none;
+  padding: 0px;
+  margin: 0px 5px;
+}
