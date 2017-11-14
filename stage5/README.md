@@ -23,4 +23,4 @@ For specific, detailed instructions, look at the project instructions in the [Ud
 * Open index.html 
 
 ## Launch
-[Project 5](https://ziggysauce.github.io/udacity_IPND/Stage%205/index.html)
+[Project 5](https://ziggysauce.github.io/udacity_IPND/stage5/index.html)
