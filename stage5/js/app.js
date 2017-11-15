@@ -154,7 +154,7 @@ function correct() {
   document.getElementById(`card${storeId[1]}`).classList.add('match');
   cardContainer[0].classList.remove('notReady');
   pairs += 1;
-  if (pairs === 1) {
+  if (pairs === 8) {
     endGame();
   }
 }
