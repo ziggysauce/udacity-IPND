@@ -84,8 +84,8 @@ function scoreKeeper() {
   const getMoves = document.getElementById('finalmoves');
   const getFinalTimes = document.getElementById('finaltime');
 
-  getMoves.append(`${totalClick.toString()}`);
-  getFinalTimes.append(`${minutes}:${tens}:${ones}`);
+  getMoves.append(`${(totalClick / 2).toString()}`);
+  getFinalTimes.append(`${addMinutes.innerHTML}:${addTens.innerHTML}:${addOnes.innerHTML}`);
 
   if (totalClick <= 28) {
     const threeStars = `
@@ -155,7 +155,7 @@ function correct() {
   document.getElementById(`card${storeId[1]}`).classList.add('match');
   cardContainer[0].classList.remove('notReady');
   pairs += 1;
-  if (pairs === 1) {
+  if (pairs === 8) {
     endGame();
   }
 }
@@ -240,9 +240,20 @@ function flipCards() {
   cardId.map((i) => {
     const clickMe = document.getElementById(`card${i}`);
     clickMe.onclick = (event) => {
+      // Start timer on FIRST click (beginning of game)
       if (totalClick === 0) {
         currentTime = setInterval(startTimer, 10);
       }
+      // Remove a start after 14 guesses
+      if (totalClick > 28) {
+        document.getElementById('secondstar').style.display = 'none';
+      }
+      // Remove a start after 18 guesses
+      if (totalClick > 36) {
+        document.getElementById('thirdstar').style.display = 'none';
+      }
+
+      // Show clicked card and store value
       event.target.classList.toggle('show');
       event.target.classList.toggle('open');
       clickNum += 1;
@@ -250,12 +261,19 @@ function flipCards() {
       storeId.push(i);
       storeFirstClick.push(event.target);
       currentPair.push(event.target.children[0].className);
+
+      // Show second clicked card, check if it matches first card or not
       if (clickNum === 2 && event.target === storeFirstClick[0]) {
         cardContainer[0].classList.add('notReady');
         clearCards();
       } else if (clickNum === 2) {
         cardContainer[0].classList.add('notReady');
         checkCards();
+      }
+
+      // Update number of moves with each guessed pair
+      if (totalClick % 2 === 0) {
+        document.getElementById('moves').innerHTML = (totalClick / 2).toString();
       }
     };
     return i;
