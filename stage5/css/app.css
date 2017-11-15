@@ -160,6 +160,11 @@ h1 {
 .timer {
   display: inline-block;
   float: right;
+  width: 150px;
+}
+
+#minutes, #tensplace, #onesplace {
+  padding: 1px;
 }
 
 .score-panel .stars {
@@ -190,12 +195,12 @@ h1 {
 }
 
 .game-over p {
-  height: 10vh;
+  height: 80px;
   margin: 0;
 }
 
 .game-over h2 {
-  height: 10vh;
+  height: 80px;
   margin: 20px 0px;
 }
 
@@ -223,7 +228,7 @@ h1 {
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: 10vh;
+  height: 80px;
   margin: 0;
 }
 
