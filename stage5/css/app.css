@@ -159,7 +159,7 @@ h1 {
 
 .timer {
   display: inline-block;
-  margin-left: 15%;
+  float: right;
 }
 
 .score-panel .stars {
@@ -172,11 +172,6 @@ h1 {
 .score-panel .stars li {
     list-style: none;
     display: inline-block;
-}
-
-.score-panel .restart {
-    float: right;
-    cursor: pointer;
 }
 
 /*

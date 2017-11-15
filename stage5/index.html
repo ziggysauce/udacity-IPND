@@ -10,7 +10,7 @@
 </head>
 <body>
 
-    <div class="container" id="cont">
+    <div class="container" id="cont"> <!-- Begin container -->
         <header>
             <h1>Social Media Matcher</h1>
         </header>
@@ -21,81 +21,15 @@
         		<li id="secondstar"><i class="fa fa-star"></i></li>
         		<li id="thirdstar"><i class="fa fa-star"></i></li>
         	</ul>
-
         	<span class="moves" id="moves">0</span> Moves
           <span class="timer">
             <span id="minutes">00</span>:<span id="tensplace">00</span>:<span id="onesplace">00</span>
           </span>
+        </section> <!-- Append deck with 16 cards -->
 
-            <div class="restart">
-        		<i class="fa fa-repeat"></i>
-        	</div>
-        </section>
+        <section class="game-over" id="end"></section> <!-- Append end game pop-up -->
 
-        <section class="game-over" id="end">
-          <!-- <h2>Game Over!</h2>
-          <p>Congratulations, you finished the game in <span id="finalmoves"></span> moves!</p>
-          <p>Time: <span id="finaltime"></span></p>
-          <div id="endscore">
-            <span>Score:</span>
-            <ul id="endstars">
-            </ul>
-          </div>
-          <button type="button" name="reset-game" id="resetgame">Play Again</button> -->
-        </section>
-
-<!-- Can delete this  -->
-        <!-- <ul class="deck" id="theDeck"> -->
-            <!-- <li class="fb card open show" id="card1">
-                <i class="fa fa-facebook"></i>
-            </li>
-            <li class="gplus card" id="card2">
-                <i class="fa fa-google-plus"></i>
-            </li>
-            <li class="insta card match" id="card3">
-                <i class="fa fa-instagram"></i>
-            </li>
-            <li class="pinterest card" id="card4">
-                <i class="fa fa-pinterest"></i>
-            </li>
-            <li class="tumblr card" id="card5">
-                <i class="fa fa-tumblr"></i>
-            </li>
-            <li class="insta card match" id="card6">
-                <i class="fa fa-instagram"></i>
-            </li>
-            <li class="reddit card" id="card7">
-                <i class="fa fa-reddit-alien"></i>
-            </li>
-            <li class="snapchat card" id="card8">
-                <i class="fa fa-snapchat-ghost"></i>
-            </li>
-            <li class="fb card" id="card9">
-                <i class="fa fa-facebook"></i>
-            </li>
-            <li class="twitter card" id="card10">
-                <i class="fa fa-twitter"></i>
-            </li>
-            <li class="reddit card" id="card11">
-                <i class="fa fa-reddit-alien"></i>
-            </li>
-            <li class="twitter card" id="card12">
-                <i class="fa fa-twitter"></i>
-            </li>
-            <li class="pinterest card open show" id="card13">
-                <i class="fa fa-pinterest"></i>
-            </li>
-            <li class="snapchat card" id="card14">
-                <i class="fa fa-snapchat-ghost"></i>
-            </li>
-            <li class="gplus card" id="card15">
-                <i class="fa fa-google-plus"></i>
-            </li>
-            <li class="tumblr card" id="card16">
-                <i class="fa fa-tumblr"></i>
-            </li> -->
-        <!-- </ul> -->
-    </div>
+    </div> <!-- End container -->
 
     <script src="js/app.js"></script>
 </body>

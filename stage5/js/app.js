@@ -2,13 +2,13 @@
 
 /*
  * set up the event listener for a card. If a card is clicked:
- *  - display the card's symbol (put this functionality in another function that you call from this one)
- *  - add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
- *  - if the list already has another card, check to see if the two cards match
- *    + if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
- *    + if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
- *    + increment the move counter and display it on the page (put this functionality in another function that you call from this one)
- *    + if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
+ * display the card's symbol (put this functionality in another function that you call from this one)
+ * add the card to a *list* of "open" cards (put this functionality in another function that you call from this one)
+ * if the list already has another card, check to see if the two cards match
+ * if the cards do match, lock the cards in the open position (put this functionality in another function that you call from this one)
+ * if the cards do not match, remove the cards from the list and hide the card's symbol (put this functionality in another function that you call from this one)
+ * increment the move counter and display it on the page (put this functionality in another function that you call from this one)
+ * if all cards have matched, display a message with the final score (put this functionality in another function that you call from this one)
  */
 
 const array = ['fa-facebook', 'fa-google-plus', 'fa-instagram', 'fa-pinterest', 'fa-tumblr', 'fa-reddit-alien', 'fa-snapchat-ghost', 'fa-twitter', 'fa-facebook', 'fa-google-plus', 'fa-instagram', 'fa-pinterest', 'fa-tumblr', 'fa-reddit-alien', 'fa-snapchat-ghost', 'fa-twitter'];
@@ -29,7 +29,7 @@ let tens = 0;
 let ones = 0;
 
 
-// Shuffles cards and stores values in array
+// Shuffles cards and store values in array
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -116,16 +116,15 @@ function resetGame() {
 }
 
 /*
- * Create HTML for end of the game
+ * Create HTML for end of the game pop-up
  * Congratulate player
  * Show number of moves (1 move = 1 guessed pair, or 2 clicks)
  * Show star rating
- * Allow user to replay game
+ * Allow user to replay game (reloads page)
  */
 function endGame() {
   // End timer
   clearInterval(currentTime);
-  console.log(totalClick);
   const getEnd = document.getElementById('cont');
   const makeEnd = document.createElement('section');
   makeEnd.className = 'game-over';
@@ -234,7 +233,7 @@ function checkCards() {
  * Shows contents of card when clicked on
  * Temporarily stores clicked cards in array to find match
  * If two cards match, they stay showing and change color
- * If two cards do not match, they flip back and click reset
+ * If two cards do not match, they flip back and reset
  */
 function flipCards() {
   cardId.map((i) => {
@@ -244,11 +243,11 @@ function flipCards() {
       if (totalClick === 0) {
         currentTime = setInterval(startTimer, 10);
       }
-      // Remove a start after 14 guesses
+      // Remove a star after 14 guesses
       if (totalClick > 28) {
         document.getElementById('secondstar').style.display = 'none';
       }
-      // Remove a start after 18 guesses
+      // Remove a star after 18 guesses
       if (totalClick > 36) {
         document.getElementById('thirdstar').style.display = 'none';
       }
@@ -262,7 +261,7 @@ function flipCards() {
       storeFirstClick.push(event.target);
       currentPair.push(event.target.children[0].className);
 
-      // Show second clicked card, check if it matches first card or not
+      // Show second clicked card; check if it matches first card or not
       if (clickNum === 2 && event.target === storeFirstClick[0]) {
         cardContainer[0].classList.add('notReady');
         clearCards();
