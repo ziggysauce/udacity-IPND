@@ -154,7 +154,7 @@ function correct() {
   document.getElementById(`card${storeId[1]}`).classList.add('match');
   cardContainer[0].classList.remove('notReady');
   pairs += 1;
-  if (pairs === 8) {
+  if (pairs === 1) {
     endGame();
   }
 }
@@ -264,6 +264,7 @@ function flipCards() {
       // Show second clicked card; check if it matches first card or not
       if (clickNum === 2 && event.target === storeFirstClick[0]) {
         cardContainer[0].classList.add('notReady');
+        totalClick -= 2;
         clearCards();
       } else if (clickNum === 2) {
         cardContainer[0].classList.add('notReady');
