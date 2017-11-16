@@ -8,19 +8,20 @@ Build a memory game using HTML, CSS, and JavaScript
 
 ## Instructions
 
-The starter project has some HTML and CSS styling to display a static version of the Memory Game project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+This is a basic memory matching game. There are 16 cards (8 matching pairs) that need to be matched in order to win the game. A star rating and time will be presented upon completion. To start the game, click any card to reveal it's face and continue doing so until all cards have been matched with their pair.
 
-To get started, open `js/app.js` and start building out the app's functionality
+## Contributing
 
-For specific, detailed instructions, look at the project instructions in the [Udacity Classroom](https://classroom.udacity.com/me).
+Make a pull request to this repository for review
 
 ## Built With
 * HTML
 * CSS
 * JavaScript
+* ESLint (AirBnB rules)
 
 ## Deployment
-* Open index.html 
+* Open index.html
 
 ## Launch
-[Project 5](https://ziggysauce.github.io/udacity_IPND/stage5/index.html)
+Live Demo: [Project 5](https://ziggysauce.github.io/udacity_IPND/stage5/index.html)
