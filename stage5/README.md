@@ -5,7 +5,7 @@ Build a memory game using HTML, CSS, and JavaScript
 
 * [Instructions](#instructions)
 * [Contributing](#contributing)
-* [Build Tools](#built)
+* [Build Tools](#built-with)
 * [Deploy](#deployment)
 * [Launch](#launch)
 
