@@ -61,6 +61,7 @@ h1 {
 }
 
 .deck .card {
+    /* makde cards flexible */
     margin: 1%;
     height: 10vw;
     width: 10vw;
