@@ -42,6 +42,11 @@ h1 {
   pointer-events: none;
 }
 
+
+/*
+ * When screen shrinks, the gameboard shrinks as well and the cards wrap
+ * On smaller devices, the board as a whole should appear smaller
+*/
 .deck {
     max-width: 660px;
     min-height: 680px;
