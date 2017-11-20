@@ -55,18 +55,23 @@ function shuffle(array) {
  * Cards are randomized based on shuffle function
  */
 function dealCards() {
+  // Numbers 1-16 used for card IDs
   let incnum = 1;
   const getDeck = document.getElementById('cont');
+  // Creates list of cards
   const makeDeck = document.createElement('ul');
   makeDeck.className = 'deck';
   getDeck.appendChild(makeDeck);
 
   array.map((j) => {
+    // For each element in the 'array', creates a card with the associatd social media class
     const createCard = document.createElement('li');
     createCard.className = 'card ';
+    // Adds ID to each card for selection specificity
     createCard.setAttribute('id', `card${incnum}`);
     const createIcon = document.createElement('i');
     createIcon.className = `fa ${j}`;
+    // After incnum = 16, entire deck should be created
     incnum += 1;
     createCard.appendChild(createIcon);
     makeDeck.appendChild(createCard);
@@ -264,7 +269,6 @@ function flipCards() {
       // Show second clicked card; check if it matches first card or not
       if (clickNum === 2 && event.target === storeFirstClick[0]) {
         cardContainer[0].classList.add('notReady');
-        totalClick -= 2;
         clearCards();
       } else if (clickNum === 2) {
         cardContainer[0].classList.add('notReady');

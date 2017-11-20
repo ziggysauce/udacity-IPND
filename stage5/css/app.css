@@ -26,6 +26,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding: 20px;
 }
 
 h1 {
@@ -42,7 +43,7 @@ h1 {
 }
 
 .deck {
-    width: 660px;
+    max-width: 660px;
     min-height: 680px;
     background: linear-gradient(160deg, #BEF1EB 0%, #4485D2 100%);
     padding: 32px;
@@ -56,6 +57,7 @@ h1 {
 }
 
 .deck .card {
+    margin: 10px;
     height: 125px;
     width: 125px;
     background: #403647;
