@@ -48,8 +48,7 @@ h1 {
  * On smaller devices, the board as a whole should appear smaller
 */
 .deck {
-    max-width: 660px;
-    min-height: 680px;
+    max-width: 60vw;
     background: linear-gradient(160deg, #BEF1EB 0%, #4485D2 100%);
     padding: 32px;
     border-radius: 3px;
@@ -62,9 +61,9 @@ h1 {
 }
 
 .deck .card {
-    margin: 10px;
-    height: 125px;
-    width: 125px;
+    margin: 1%;
+    height: 10vw;
+    width: 10vw;
     background: #403647;
     font-size: 0;
     color: #ffffff;
