@@ -168,6 +168,7 @@ function correct() {
 function incorrect() {
   document.getElementById(`card${storeId[0]}`).classList.remove('show', 'open', 'incorrect');
   document.getElementById(`card${storeId[1]}`).classList.remove('show', 'open', 'incorrect');
+  storeFirstClick[0].classList.remove('notReady');
   cardContainer[0].classList.remove('notReady');
 }
 
@@ -265,6 +266,9 @@ function flipCards() {
       storeId.push(i);
       storeFirstClick.push(event.target);
       currentPair.push(event.target.children[0].className);
+
+      // Do not allow re-clicking same card
+      storeFirstClick[0].classList.add('notReady');
 
       // Show second clicked card; check if it matches first card or not
       if (clickNum === 2 && event.target === storeFirstClick[0]) {
