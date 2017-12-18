@@ -9,4 +9,4 @@ Build a stylish website using HTML and CSS.
 * Open index.html 
 
 ## Launch
-[Project 1](https://ziggysauce.github.io/udacity_IPND/Stage%201/index.html)
+[Project 1](https://ziggysauce.github.io/udacity-IPND/stage1/index.html)
