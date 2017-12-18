@@ -27,4 +27,4 @@ Make a pull request to this repository for review
 * Open index.html
 
 ## Launch
-Live Demo: [Project 5](https://ziggysauce.github.io/udacity_IPND/stage5/index.html)
+Live Demo: [Project 5](https://ziggysauce.github.io/udacity-IPND/stage5/index.html)
